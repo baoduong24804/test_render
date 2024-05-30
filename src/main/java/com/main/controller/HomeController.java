@@ -9,13 +9,13 @@ import org.springframework.web.bind.annotation.ResponseBody;
 public class HomeController {
 	@GetMapping("/home")
 	public String getMethodName() {
-		return "/index.jsp";
+		return "index";
 	}
 	
 	@GetMapping("/")
 	@ResponseBody
 	public String getMethodName2() {
-		return "Hello2";
+		return "Hello329";
 	}
 	
 }
