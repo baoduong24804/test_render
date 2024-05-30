@@ -1,14 +1,17 @@
-# Sử dụng hình ảnh chính thức của OpenJDK 17
+FROM ubuntu:latest AS build
+
+RUN apt-get update
+RUN apt-get install openjdk-17-jdk -y
+COPY . .
+
+RUN apt-get install maven -y
+RUN mvn clean install
+
 FROM openjdk:17-jdk-slim
 
-# Đặt thư mục làm việc trong container
-WORKDIR /app
-
-# Sao chép file JAR từ thư mục target vào thư mục làm việc của container
-COPY target/*.jar app.jar
-
-# Mở cổng mà ứng dụng sẽ chạy
 EXPOSE 8080
 
-# Chạy ứng dụng
+COPY --from=build /target/test_render-0.0.1-SNAPSHOT.jar app.jar
+
+
 ENTRYPOINT ["java", "-jar", "app.jar"]
