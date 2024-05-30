@@ -13,4 +13,16 @@ public class TestRenderApplication {
 		SpringApplication.run(TestRenderApplication.class, args);
 	}
 
+	class Controller{
+		@GetMapping("/home")
+	public String getMethodName() {
+		return "/index.jsp";
+	}
+	
+	@GetMapping("/")
+	public String getMethodName2() {
+		return "/index.jsp";
+	}
+	}
+
 }
