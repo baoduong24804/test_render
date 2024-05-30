@@ -7,6 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-This is my website
+This is my website 2
 </body>
 </html>

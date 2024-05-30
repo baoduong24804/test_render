@@ -15,7 +15,7 @@ public class HomeController {
 	@GetMapping("/")
 	@ResponseBody
 	public String getMethodName2() {
-		return "Hello329";
+		return "Hello333";
 	}
 	
 }
