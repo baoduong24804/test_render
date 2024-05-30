@@ -6,12 +6,12 @@ import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
 public class HomeController {
-	@GetMapping("home")
+	@GetMapping("/home")
 	public String getMethodName() {
 		return "/index.jsp";
 	}
 	
-	@GetMapping("")
+	@GetMapping("/")
 	public String getMethodName2() {
 		return "/index.jsp";
 	}
